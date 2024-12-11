@@ -4,13 +4,12 @@ import { createTopic } from '@/actions/topicActions'
 import React, { useState } from 'react'
 
 export default function AddTopicForm() {
-  const [title] = useState('')
   const [description, setDescription] = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      await createTopic(title, description)
+      await createTopic(description)
     } catch (error) {
       console.log(error)
     }

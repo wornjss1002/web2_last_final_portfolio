@@ -6,10 +6,10 @@ import Topic from '@/models/topic'
 import { revalidatePath } from 'next/cache'
 
 // 1. 토픽 생성: Topic.create()
-export async function createTopic(title: string, description: string) {
+export async function createTopic(description: string) {
   try {
     await connectMongoDB()
-    const doc = await Topic.create({ title, description })
+    const doc = await Topic.create({ description })
     revalidatePath('/')
     return { success: true, topic: convertDocToObj(doc) }
   } catch (error) {
@@ -17,26 +17,7 @@ export async function createTopic(title: string, description: string) {
   }
 }
 
-// 2. 토픽 수정: Topic.findByIdAndUpdate()
-export async function updateTopic(
-  id: string,
-  title: string,
-  description: string
-) {
-  try {
-    await connectMongoDB()
-    const doc = await Topic.findByIdAndUpdate(
-      id,
-      { title, description },
-      { new: true }
-    )
-    if (!doc) throw new Error('토픽을 찾을 수 없습니다')
-    revalidatePath('/')
-    return { success: true, topic: convertDocToObj(doc) }
-  } catch (error) {
-    throw new Error(`토픽 수정에 실패했습니다: ${error}`)
-  }
-}
+
 
 // 3. 단일 토픽 조회 (GET) Topic.findById(id)
 export async function getTopic(id: string) {
@@ -62,15 +43,4 @@ export async function getAllTopics() {
   }
 }
 
-// 5. 토픽 삭제: DELETE: Topic.findByIdAndDelete(id)
-export async function deleteTopic(id: string) {
-  try {
-    await connectMongoDB()
-    const doc = await Topic.findByIdAndDelete(id)
-    if (!doc) throw new Error('토픽을 찾을 수 없습니다')
-    revalidatePath('/')
-    return { success: true }
-  } catch (error) {
-    throw new Error(`토픽 삭제에 실패했습니다: ${error}`)
-  }
-}
+
