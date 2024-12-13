@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { MongoClient, ObjectId } from 'mongodb'
+import { MongoClient } from 'mongodb'
 
 const uri = process.env.MONGODB_URI!
 const client = new MongoClient(uri)
@@ -14,6 +14,7 @@ export async function GET() {
     
     return NextResponse.json(result)
   } catch (error) {
+    console.error('Error:', error)
     return NextResponse.json({ error: '댓글을 불러오는데 실패했습니다.' }, { status: 500 })
   } finally {
     await client.close()
@@ -36,6 +37,7 @@ export async function POST(request: Request) {
     
     return NextResponse.json(result)
   } catch (error) {
+    console.error('Error:', error)
     return NextResponse.json({ error: '댓글 작성에 실패했습니다.' }, { status: 500 })
   } finally {
     await client.close()
