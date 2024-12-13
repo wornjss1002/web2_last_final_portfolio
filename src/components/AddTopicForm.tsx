@@ -10,10 +10,6 @@ export default function AddTopicForm() {
     e.preventDefault()
     try {
       await createTopic(description)
-      // 폼 제출 후 입력 필드 초기화
-      setDescription('')
-      // 페이지 새로고침하여 최신 데이터 가져오기
-      window.location.reload()
     } catch (error) {
       console.log(error)
     }
