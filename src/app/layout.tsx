@@ -28,7 +28,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen flex flex-col">
           {/* 네비게이션 바 */}
-          <header className="w-full bg-gray-800 shadow-md">
+          <header className="w-full mt-4 ">
             <Navbar />
           </header>
 

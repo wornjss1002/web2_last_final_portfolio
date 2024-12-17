@@ -205,8 +205,24 @@ export default function Profile() {
               </div>
             </div>
           </Link>
+          
         </div>
       </div>
+
+      {/* Study Log 버튼 컨테이너 추가 */}
+      <div className="flex justify-end mt-12 mb-8">
+        <Link
+          href="/study"
+          className="text-gray-800 bg-yellow-400 
+                     px-8 py-3 rounded-full font-semibold text-lg
+                     hover:bg-yellow-500 
+                     transform hover:scale-105 transition-all duration-300
+                     shadow-lg flex items-center gap-2"
+        >
+          <span>📚</span> Study Log
+        </Link>
+      </div>
     </div>
+    
   );
 }
