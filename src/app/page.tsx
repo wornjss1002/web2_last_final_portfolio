@@ -123,7 +123,7 @@ export default function Profile() {
                 >
                 </a>
               </div>
-              <p className="text-gray-600 mb-6 text-lg">Clerk API를 사용하여 인증 기능을 구현한 프로젝트입니다.</p>
+              <p className="text-gray-600 mb-6 text-lg">Unity 엔진을 활용한 안드로이드 게임 개발 프로젝트입니다.</p>
               <div className="flex gap-3">
                 <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded text-base">TypeScript</span>
                 <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded text-base">Clerk-api</span>
