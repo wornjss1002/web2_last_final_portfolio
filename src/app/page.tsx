@@ -125,8 +125,8 @@ export default function Profile() {
               </div>
               <p className="text-gray-600 mb-6 text-lg">Unity 엔진을 활용한 안드로이드 게임 개발 프로젝트입니다.</p>
               <div className="flex gap-3">
-                <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded text-base">TypeScript</span>
-                <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded text-base">Clerk-api</span>
+                <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded text-base">Unity</span>
+                <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded text-base">C#</span>
               </div>
             </div>
           </Link>
